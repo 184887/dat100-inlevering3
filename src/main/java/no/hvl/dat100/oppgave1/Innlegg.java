@@ -81,7 +81,7 @@ public abstract class Innlegg {
 	
 	@Override
 	public String toString() {
-		String str = id + "\n" + 
+		 String str = id + "\n" + 
 					 bruker + "\n" + 
 					 dato + "\n" + 
 					 likes + "\n";

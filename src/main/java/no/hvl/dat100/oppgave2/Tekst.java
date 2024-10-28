@@ -1,36 +1,44 @@
 package no.hvl.dat100.oppgave2;
 
+import org.apache.maven.surefire.shared.lang3.text.StrBuilder;
+
 import no.hvl.dat100.common.TODO;
 import no.hvl.dat100.oppgave1.*;
 
 public class Tekst extends Innlegg {
 
-	// TODO: objektvariable 
+	public String tekst; 
 	
 	public Tekst () {
 		
 	}
 	
 	public Tekst(int id, String bruker, String dato, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
+		this.tekst = tekst; 
 	}
 	
 	public Tekst(int id, String bruker, String dato, int likes, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
+		this.tekst = tekst; 
 	}
 	
 	public String getTekst() {
-		throw new UnsupportedOperationException(TODO.method());
+		return tekst; 
 
 	}
 
 	public void setTekst(String tekst) {
-		throw new UnsupportedOperationException(TODO.method());
+		if (tekst != null){
+			this.tekst = tekst; 
+		} else{
+			throw new UnsupportedOperationException("Du trenger en teks"); 
+		}
 	}
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+		String str = tekst;
+
+		return str;
 
 	}
 	
