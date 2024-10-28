@@ -14,10 +14,12 @@ public class Tekst extends Innlegg {
 	}
 	
 	public Tekst(int id, String bruker, String dato, String tekst) {
+		super(id, bruker, dato);
 		this.tekst = tekst; 
 	}
 	
 	public Tekst(int id, String bruker, String dato, int likes, String tekst) {
+		super(id, bruker, dato, likes);
 		this.tekst = tekst; 
 	}
 	
@@ -36,7 +38,12 @@ public class Tekst extends Innlegg {
 
 	@Override
 	public String toString() {
-		String str = tekst;
+		String str = getId()+ "\n" + 
+					 getBruker() + "\n" + 
+					 getDato() + "\n" + 
+					 getLikes() + "\n" + 
+					 tekst + "\n";
+
 
 		return str;
 
