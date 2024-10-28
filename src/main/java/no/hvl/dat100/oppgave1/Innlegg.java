@@ -70,18 +70,24 @@ public abstract class Innlegg {
 	}
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		likes++; 
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+		if (this.id == innlegg.id ){
+			return true; } else {
+			return false; }
 	}
 	
 	@Override
 	public String toString() {
+		String str = id + "\n" + 
+					 bruker + "\n" + 
+					 dato + "\n" + 
+					 likes + "\n";
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return str;
+	 
 				
 	}
 	
