@@ -31,11 +31,13 @@ public class Bilde extends Tekst {
 
 	@Override
 	public String toString() {
-		String Str = getId()+ "\n" + 
+		String Str = "BILDE" + "\n"+
+					 getId()+ "\n" + 
 					 getBruker() + "\n" + 
 					 getDato() + "\n" + 
 					 getLikes() + "\n" + 
-					 tekst + "\n";
+					 tekst + "\n" + 
+					 url + "\n";
 		
 				 return Str; 
 
