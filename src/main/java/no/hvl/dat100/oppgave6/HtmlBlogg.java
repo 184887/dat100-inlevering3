@@ -18,7 +18,24 @@ public class HtmlBlogg extends Blogg {
 	
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+	try {	StringBuilder sb = new StringBuilder(); 
+
+			String p = "<p>";
+			String h2 = "<h2>";
+			String hr = "<hr>";
+			String iframe = "<iframe"; 
+
+			String html = HTMLPREFIX +
+							sb.append(h2).toString() + HTMLPOSTFIX;
+							
+							return html; 
+	} catch (Exception e) {
+		System.err.println("NHa");
+	}
+	
+
 		
+		
+		 //TODDO Her er det noe galt
 	}
 }

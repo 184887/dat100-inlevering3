@@ -21,15 +21,7 @@ public class Blogg {
 		this.nesteledige = 0;  
 	}
 	public int getAntall() {
-		int antall = 0; 
-		for(Innlegg post:innleggtabell){
-			if (post != null){
-			antall++; 
-		} else{
-			break; 
-		}
-	}
-	return antall; 
+	return nesteledige; 
 }
 	
 	public Innlegg[] getSamling() {
@@ -38,7 +30,7 @@ public class Blogg {
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
-		for (int i = 0; i < nesteledige; i++) {  // Only loop through filled elements
+		for (int i = 0; i < nesteledige; i++) {  
 			if (innleggtabell[i] != null && innleggtabell[i].getId() == innlegg.getId()) {
 				return i;  
 			}
