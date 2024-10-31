@@ -22,6 +22,10 @@ public class Tekst extends Innlegg {
 		super(id, bruker, dato, likes);
 		this.tekst = tekst; 
 	}
+
+	protected String getGrandparentToString() {
+        return super.toString();
+    }
 	
 	public String getTekst() {
 		return tekst; 
@@ -39,10 +43,7 @@ public class Tekst extends Innlegg {
 	@Override
 	public String toString() {
 		String str = "TEKST" + "\n"+
-					 getId()+ "\n" + 
-					 getBruker() + "\n" + 
-					 getDato() + "\n" + 
-					 getLikes() + "\n" + 
+					 super.toString() +
 					 tekst + "\n";
 
 

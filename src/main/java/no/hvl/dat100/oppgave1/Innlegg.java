@@ -75,19 +75,17 @@ public abstract class Innlegg {
 	
 	public boolean erLik(Innlegg innlegg) {
 		if (this.id == innlegg.id ){
-			return true; } else {
+			return true; 
+		} else {
 			return false; }
 	}
 	
 	@Override
 	public String toString() {
-		 String str = id + "\n" + 
+		 	return   id + "\n" + 
 					 bruker + "\n" + 
 					 dato + "\n" + 
 					 likes + "\n";
-		
-		return str;
-	 
 				
 	}
 	
