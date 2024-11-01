@@ -10,7 +10,7 @@ public class Blogg {
 	private Innlegg[] innleggtabell; 
 	private int nesteledige; 
 
-
+ 
 	public Blogg() {
 		this.innleggtabell = new Innlegg[20]; 
 		this.nesteledige = 0;    

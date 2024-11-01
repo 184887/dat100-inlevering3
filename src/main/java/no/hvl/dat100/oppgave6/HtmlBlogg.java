@@ -2,7 +2,10 @@ package no.hvl.dat100.oppgave6;
 
 import no.hvl.dat100.common.TODO;
 import no.hvl.dat100.oppgave1.Innlegg;
+import no.hvl.dat100.oppgave2.Bilde;
+import no.hvl.dat100.oppgave2.Tekst;
 import no.hvl.dat100.oppgave3.Blogg;
+
 
 public class HtmlBlogg extends Blogg {
 
@@ -18,24 +21,34 @@ public class HtmlBlogg extends Blogg {
 	
 	@Override
 	public String toString() {
-	try {	StringBuilder sb = new StringBuilder(); 
+	    StringBuilder sb = new StringBuilder();
 
-			String p = "<p>";
-			String h2 = "<h2>";
-			String hr = "<hr>";
-			String iframe = "<iframe"; 
+	    String p = "<p>";
+	    String h2 = "<h2>";
+	    String hr = "<hr>";
+	    String iframe = "<iframe src=\""; 
+	    String iframeEnd = "\"></iframe>";
+	    Innlegg[] samling = getSamling();
 
-			String html = HTMLPREFIX +
-							sb.append(h2).toString() + HTMLPOSTFIX;
-							
-							return html; 
-	} catch (Exception e) {
-		System.err.println("NHa");
-	}
-	
+	    for (Innlegg innlegg : samling) {
+	        if (innlegg != null) {
+	            sb.append(h2).append(innlegg.getBruker()).append(" ").append(innlegg.getDato()).append(" [").append(innlegg.getLikes()).append("]</h2>\n");
 
-		
-		
-		 //TODDO Her er det noe galt
+	            if (innlegg instanceof Tekst) {
+	                Tekst tekstInnlegg = (Tekst) innlegg;
+	                sb.append(p).append(tekstInnlegg.getTekst()).append("</p>\n");
+	            }
+
+	            if (innlegg instanceof Bilde) {
+	                Bilde bilde = (Bilde) innlegg;
+	                sb.append(p).append(bilde.getTekst()).append("</p>\n");
+	                sb.append(iframe).append(bilde.getUrl()).append(iframeEnd).append("\n");
+	            }
+
+	            sb.append(hr).append("\n");
+	        }
+	    }
+
+	    return sb.toString();
 	}
 }
