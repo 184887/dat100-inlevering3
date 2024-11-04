@@ -65,14 +65,19 @@ public class Blogg {
 	
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
-
+try{
 		 for (int i = 0;i <innleggtabell.length; i++ ){	
 			if (innleggtabell[i] != null) { 
 				stringBuilder.append(innleggtabell[i].toString()); 
 			}
 		 }
 		 return  nesteledige + "\n" + stringBuilder;
+	} 	catch (UnsupportedOperationException ex) {
+			System.out.println("An unsupported operation was attempted: " + ex.getMessage());
+			return ""; 
 	}
+}
+	
 
 	// valgfrie oppgaver nedenfor
 	
