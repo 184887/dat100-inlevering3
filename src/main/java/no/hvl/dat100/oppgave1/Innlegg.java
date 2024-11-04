@@ -10,11 +10,6 @@ public abstract class Innlegg {
 	private int likes;
 
 	
-	public Innlegg() {
-
-		
-	}
-	
 	public Innlegg(int id, String bruker, String dato) {
 		
 		this.id = id; 
@@ -42,7 +37,7 @@ public abstract class Innlegg {
 		if(bruker != null){
 			this.bruker = bruker; 
 		} else {
-			throw new UnsupportedOperationException("Du måp gi bruker et navn"); 
+			throw new UnsupportedOperationException("Bruker har et navn"); 
 		}
 	}
 
