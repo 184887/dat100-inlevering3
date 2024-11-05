@@ -9,10 +9,6 @@ public class Tekst extends Innlegg {
 
 	public String tekst; 
 	
-	public Tekst () {
-		
-	}
-	
 	public Tekst(int id, String bruker, String dato, String tekst) {
 		super(id, bruker, dato);
 		this.tekst = tekst; 
@@ -36,7 +32,7 @@ public class Tekst extends Innlegg {
 		if (tekst != null){
 			this.tekst = tekst; 
 		} else{
-			throw new UnsupportedOperationException("Du trenger en teks"); 
+			throw new UnsupportedOperationException("Du trenger en tekst"); 
 		}
 	}
 
